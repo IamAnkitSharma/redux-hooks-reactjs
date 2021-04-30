@@ -7,6 +7,7 @@ const userReducer = (state = intialState, action) => {
     case "LOADING":
       return {
         ...state,
+        name: "",
         isLoading: true,
       };
     case "GET_RANDOM_USER":

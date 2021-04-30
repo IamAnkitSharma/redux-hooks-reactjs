@@ -1,22 +1,23 @@
-import axios from "axios";
-import React, { useRef, useState } from "react";
+import React, { useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { login, logout } from "./actions/auth";
 import { decrement, increment } from "./actions/counter";
 import { getRandomUser } from "./actions/user";
+
 import "./App.css";
 function App() {
   const counter = useSelector((state) => state.counter);
   const isLoggedin = useSelector((state) => state.isLoggedin);
-  const { name, isLoading } = useSelector((state) => state.user);
+  // console.log(isLoggedin);
+  const { name:userName, isLoading } = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
   const inputRef = useRef(0);
   // const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState("");
+
 
   const loginHandler = () => {
-    login();
+    dispatch(login());
   };
   const logoutHandler = () => {
     dispatch(logout());
@@ -52,9 +53,7 @@ function App() {
             alt=""
           />
         )}
-
-        {error && <h2 id="error">{error}</h2>}
-        <h2>{name}</h2>
+        <h2>{userName}</h2>
       </div>
     </div>
   );

@@ -6,6 +6,6 @@ import userReducer from "./user";
 const rootReducer = combineReducers({
   counter: counterReducer,
   isLoggedin: isLoggedInReducer,
-  user:userReducer
+  user:userReducer,
 });
 export default rootReducer;
