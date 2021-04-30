@@ -1,0 +1,11 @@
+#fetchRandomUser{
+    margin-top:3rem;
+    
+}
+#fetchRandomUser button {
+    display:block
+}
+#fetchRandomUser img{
+    height: 90px;
+    width: 90px;
+}
