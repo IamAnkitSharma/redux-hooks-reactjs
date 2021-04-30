@@ -30,10 +30,10 @@ function App() {
     <div className="App">
       <h1>{counter}</h1>
       <input type="text" ref={inputRef} name="" id="" defaultValue="1" />
-      <button onClick={() => dispatch(increment(inputRef.current.value))}>
+      <button onClick={() => dispatch(increment(parseInt(inputRef.current.value) || 1))}>
         +
       </button>
-      <button onClick={() => dispatch(decrement(inputRef.current.value))}>
+      <button onClick={() => dispatch(decrement(parseInt(inputRef.current.value) || 1))}>
         -
       </button>
 
