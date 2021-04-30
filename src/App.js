@@ -15,6 +15,7 @@ function App() {
   const logoutHandler = () => {
     dispatch(logout());
   };
+
   return (
     <div className="App">
       <h1>{counter}</h1>
